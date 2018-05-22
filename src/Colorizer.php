@@ -171,112 +171,112 @@ class Colorizer {
 		$this->adjustmentCount =  0;
 		$this->message = str_replace("[bold]", "\e[1m", $this->message, $replaced); //bold
 		$this->message = str_replace("[/bold]", "\e[21m", $this->message, $replaced); //remove bold
-		$this->adjustmentCount +=  ($replaced > 0 ) ? (strlen("e[1m") + strlen("e[21m")) * $replaced : 0;
+		$this->adjustmentCount +=  ($replaced > 0 ) ? (mb_strlen("e[1m") + mb_strlen("e[21m")) * $replaced : 0;
 		$replaced = 0;
 		
 		$this->message = str_replace("[b]", "\e[1m", $this->message, $replaced); //bold
 		$this->message = str_replace("[/b]", "\e[21m", $this->message, $replaced); //remove bold
-		$this->adjustmentCount +=  ($replaced > 0 ) ? (strlen("e[1m") + strlen("e[21m")) * $replaced : 0;
+		$this->adjustmentCount +=  ($replaced > 0 ) ? (mb_strlen("e[1m") + mb_strlen("e[21m")) * $replaced : 0;
 		$replaced = 0;
 		
 		$this->message = str_replace("[dim]", "\e[2m", $this->message, $replaced); //dim
 		$this->message = str_replace("[/dim]", "\e[22m", $this->message, $replaced); //remove dim
-		$this->adjustmentCount +=  ($replaced > 0 ) ? (strlen("e[2m") + strlen("e[22m")) * $replaced : 0;
+		$this->adjustmentCount +=  ($replaced > 0 ) ? (mb_strlen("e[2m") + mb_strlen("e[22m")) * $replaced : 0;
 		$replaced = 0;
 		
 		$this->message = str_replace("[d]", "\e[2m", $this->message, $replaced); //dim
 		$this->message = str_replace("[/d]", "\e[22m", $this->message, $replaced); //remove dim
-		$this->adjustmentCount +=  ($replaced > 0 ) ? (strlen("e[2m") + strlen("e[22m")) * $replaced : 0;
+		$this->adjustmentCount +=  ($replaced > 0 ) ? (mb_strlen("e[2m") + mb_strlen("e[22m")) * $replaced : 0;
 		$replaced = 0;
 		
 		$this->message = str_replace("[underline]", "\e[4m", $this->message, $replaced); //underline
 		$this->message = str_replace("[/underline]", "\e[24m", $this->message, $replaced); //remove underline
-		$this->adjustmentCount +=  ($replaced > 0 ) ? (strlen("e[4m") + strlen("e[24m")) * $replaced : 0;
+		$this->adjustmentCount +=  ($replaced > 0 ) ? (mb_strlen("e[4m") + mb_strlen("e[24m")) * $replaced : 0;
 		$replaced = 0;
 		
 		$this->message = str_replace("[u]", "\e[4m", $this->message, $replaced); //underline
 		$this->message = str_replace("[/u]", "\e[24m", $this->message, $replaced); //remove underline
-		$this->adjustmentCount +=  ($replaced > 0 ) ? (strlen("e[4m") + strlen("e[24m")) * $replaced : 0;
+		$this->adjustmentCount +=  ($replaced > 0 ) ? (mb_strlen("e[4m") + mb_strlen("e[24m")) * $replaced : 0;
 		$replaced = 0;
 		// ------ colors ---------
 		$this->message = str_replace("[black]", "\e[30m", $this->message, $replaced); //color
 		$this->message = str_replace("[/black]", "\e[".$this->background_color."m"."\e[".$this->foreground_color."m", $this->message, $replaced); //color reset
-		$this->adjustmentCount +=  ($replaced > 0 ) ? (strlen("e[30m") + strlen("\e[".$this->background_color."m"."\e[".$this->foreground_color."m")) * $replaced : 0;
+		$this->adjustmentCount +=  ($replaced > 0 ) ? (mb_strlen("e[30m") + mb_strlen("\e[".$this->background_color."m"."\e[".$this->foreground_color."m")) * $replaced : 0;
 		$replaced = 0;
 		
 		$this->message = str_replace("[red]", "\e[31m", $this->message, $replaced); //color
 		$this->message = str_replace("[/red]", "\e[".$this->background_color."m"."\e[".$this->foreground_color."m", $this->message, $replaced); //color reset
-		$this->adjustmentCount +=  ($replaced > 0 ) ? (strlen("e[31m") + strlen("\e[".$this->background_color."m"."\e[".$this->foreground_color."m")) * $replaced : 0;
+		$this->adjustmentCount +=  ($replaced > 0 ) ? (mb_strlen("e[31m") + mb_strlen("\e[".$this->background_color."m"."\e[".$this->foreground_color."m")) * $replaced : 0;
 		$replaced = 0;
 		
 		$this->message = str_replace("[green]", "\e[32m", $this->message, $replaced); //color
 		$this->message = str_replace("[/green]", "\e[".$this->background_color."m"."\e[".$this->foreground_color."m", $this->message, $replaced); //color reset
-		$this->adjustmentCount +=  ($replaced > 0 ) ? (strlen("e[32m") + strlen("\e[".$this->background_color."m"."\e[".$this->foreground_color."m")) * $replaced : 0;
+		$this->adjustmentCount +=  ($replaced > 0 ) ? (mb_strlen("e[32m") + mb_strlen("\e[".$this->background_color."m"."\e[".$this->foreground_color."m")) * $replaced : 0;
 		$replaced = 0;
 		
 		$this->message = str_replace("[yellow]", "\e[33m", $this->message, $replaced); //color
 		$this->message = str_replace("[/yellow]", "\e[".$this->background_color."m"."\e[".$this->foreground_color."m", $this->message, $replaced); //color reset
-		$this->adjustmentCount +=  ($replaced > 0 ) ? (strlen("e[33m") + strlen("\e[".$this->background_color."m"."\e[".$this->foreground_color."m")) * $replaced : 0;
+		$this->adjustmentCount +=  ($replaced > 0 ) ? (mb_strlen("e[33m") + mb_strlen("\e[".$this->background_color."m"."\e[".$this->foreground_color."m")) * $replaced : 0;
 		$replaced = 0;
 		
 		$this->message = str_replace("[blue]", "\e[34m", $this->message, $replaced); //color
 		$this->message = str_replace("[/blue]", "\e[".$this->background_color."m"."\e[".$this->foreground_color."m", $this->message, $replaced); //color reset
-		$this->adjustmentCount +=  ($replaced > 0 ) ? (strlen("e[34m") + strlen("\e[".$this->background_color."m"."\e[".$this->foreground_color."m")) * $replaced : 0;
+		$this->adjustmentCount +=  ($replaced > 0 ) ? (mb_strlen("e[34m") + mb_strlen("\e[".$this->background_color."m"."\e[".$this->foreground_color."m")) * $replaced : 0;
 		$replaced = 0;
 		
 		$this->message = str_replace("[magenta]", "\e[35m", $this->message, $replaced); //color
 		$this->message = str_replace("[/magenta]", "\e[".$this->background_color."m"."\e[".$this->foreground_color."m", $this->message, $replaced); //color reset
-		$this->adjustmentCount +=  ($replaced > 0 ) ? (strlen("e[35m") + strlen("\e[".$this->background_color."m"."\e[".$this->foreground_color."m")) * $replaced : 0;
+		$this->adjustmentCount +=  ($replaced > 0 ) ? (mb_strlen("e[35m") + mb_strlen("\e[".$this->background_color."m"."\e[".$this->foreground_color."m")) * $replaced : 0;
 		$replaced = 0;
 		
 		$this->message = str_replace("[cyan]", "\e[36m", $this->message, $replaced); //color
 		$this->message = str_replace("[/cyan]", "\e[".$this->background_color."m"."\e[".$this->foreground_color."m", $this->message, $replaced); //color reset
-		$this->adjustmentCount +=  ($replaced > 0 ) ? (strlen("e[36m") + strlen("\e[".$this->background_color."m"."\e[".$this->foreground_color."m")) * $replaced : 0;
+		$this->adjustmentCount +=  ($replaced > 0 ) ? (mb_strlen("e[36m") + mb_strlen("\e[".$this->background_color."m"."\e[".$this->foreground_color."m")) * $replaced : 0;
 		$replaced = 0;
 		
 		$this->message = str_replace("[lightGrey]", "\e[37m", $this->message, $replaced); //color
 		$this->message = str_replace("[/lightGrey]", "\e[".$this->background_color."m"."\e[".$this->foreground_color."m", $this->message, $replaced); //color reset
-		$this->adjustmentCount +=  ($replaced > 0 ) ? (strlen("e[37m") + strlen("\e[".$this->background_color."m"."\e[".$this->foreground_color."m")) * $replaced : 0;
+		$this->adjustmentCount +=  ($replaced > 0 ) ? (mb_strlen("e[37m") + mb_strlen("\e[".$this->background_color."m"."\e[".$this->foreground_color."m")) * $replaced : 0;
 		$replaced = 0;
 		
 		$this->message = str_replace("[darkGrey]", "\e[90m", $this->message, $replaced); //color
 		$this->message = str_replace("[/darkGrey]", "\e[".$this->background_color."m"."\e[".$this->foreground_color."m", $this->message, $replaced); //color reset
-		$this->adjustmentCount +=  ($replaced > 0 ) ? (strlen("e[90m") + strlen("\e[".$this->background_color."m"."\e[".$this->foreground_color."m")) * $replaced : 0;
+		$this->adjustmentCount +=  ($replaced > 0 ) ? (mb_strlen("e[90m") + mb_strlen("\e[".$this->background_color."m"."\e[".$this->foreground_color."m")) * $replaced : 0;
 		$replaced = 0;
 		
 		$this->message = str_replace("[lightRed]", "\e[91m", $this->message, $replaced); //color
 		$this->message = str_replace("[/lightRed]", "\e[".$this->background_color."m"."\e[".$this->foreground_color."m", $this->message, $replaced); //color reset
-		$this->adjustmentCount +=  ($replaced > 0 ) ? (strlen("e[91m") + strlen("\e[".$this->background_color."m"."\e[".$this->foreground_color."m")) * $replaced : 0;
+		$this->adjustmentCount +=  ($replaced > 0 ) ? (mb_strlen("e[91m") + mb_strlen("\e[".$this->background_color."m"."\e[".$this->foreground_color."m")) * $replaced : 0;
 		$replaced = 0;
 		
 		$this->message = str_replace("[lightGreen]", "\e[92m", $this->message, $replaced); //color
 		$this->message = str_replace("[/lightGreen]", "\e[".$this->background_color."m"."\e[".$this->foreground_color."m", $this->message, $replaced); //color reset
-		$this->adjustmentCount +=  ($replaced > 0 ) ? (strlen("e[92m") + strlen("\e[".$this->background_color."m"."\e[".$this->foreground_color."m")) * $replaced : 0;
+		$this->adjustmentCount +=  ($replaced > 0 ) ? (mb_strlen("e[92m") + mb_strlen("\e[".$this->background_color."m"."\e[".$this->foreground_color."m")) * $replaced : 0;
 		$replaced = 0;
 		
 		$this->message = str_replace("[lightYellow]", "\e[93m", $this->message, $replaced); //color
 		$this->message = str_replace("[/lightYellow]", "\e[".$this->background_color."m"."\e[".$this->foreground_color."m", $this->message, $replaced); //color reset
-		$this->adjustmentCount +=  ($replaced > 0 ) ? (strlen("e[93m") + strlen("\e[".$this->background_color."m"."\e[".$this->foreground_color."m")) * $replaced : 0;
+		$this->adjustmentCount +=  ($replaced > 0 ) ? (mb_strlen("e[93m") + mb_strlen("\e[".$this->background_color."m"."\e[".$this->foreground_color."m")) * $replaced : 0;
 		$replaced = 0;
 		
 		$this->message = str_replace("[lightBlue]", "\e[94m", $this->message, $replaced); //color
 		$this->message = str_replace("[/lightBlue]", "\e[".$this->background_color."m"."\e[".$this->foreground_color."m", $this->message, $replaced); //color reset
-		$this->adjustmentCount +=  ($replaced > 0 ) ? (strlen("e[94m") + strlen("\e[".$this->background_color."m"."\e[".$this->foreground_color."m")) * $replaced : 0;
+		$this->adjustmentCount +=  ($replaced > 0 ) ? (mb_strlen("e[94m") + mb_strlen("\e[".$this->background_color."m"."\e[".$this->foreground_color."m")) * $replaced : 0;
 		$replaced = 0;
 		
 		$this->message = str_replace("[lightMagenta]", "\e[95m", $this->message, $replaced); //color
 		$this->message = str_replace("[/lightMagenta]", "\e[".$this->background_color."m"."\e[".$this->foreground_color."m", $this->message, $replaced); //color reset
-		$this->adjustmentCount +=  ($replaced > 0 ) ? (strlen("e[95m") + strlen("\e[".$this->background_color."m"."\e[".$this->foreground_color."m")) * $replaced : 0;
+		$this->adjustmentCount +=  ($replaced > 0 ) ? (mb_strlen("e[95m") + mb_strlen("\e[".$this->background_color."m"."\e[".$this->foreground_color."m")) * $replaced : 0;
 		$replaced = 0;
 		
 		$this->message = str_replace("[lightCyan]", "\e[96m", $this->message, $replaced); //color
 		$this->message = str_replace("[/lightCyan]", "\e[".$this->background_color."m"."\e[".$this->foreground_color."m", $this->message, $replaced); //color reset
-		$this->adjustmentCount +=  ($replaced > 0 ) ? (strlen("e[96m") + strlen("\e[".$this->background_color."m"."\e[".$this->foreground_color."m")) * $replaced : 0;
+		$this->adjustmentCount +=  ($replaced > 0 ) ? (mb_strlen("e[96m") + mb_strlen("\e[".$this->background_color."m"."\e[".$this->foreground_color."m")) * $replaced : 0;
 		$replaced = 0;
 		
 		$this->message = str_replace("[white]", "\e[97m", $this->message, $replaced); //color
 		$this->message = str_replace("[/white]", "\e[".$this->background_color."m"."\e[".$this->foreground_color."m", $this->message, $replaced); //color reset
-		$this->adjustmentCount +=  ($replaced > 0 ) ? (strlen("e[97m") + strlen("\e[".$this->background_color."m"."\e[".$this->foreground_color."m")) * $replaced : 0;
+		$this->adjustmentCount +=  ($replaced > 0 ) ? (mb_strlen("e[97m") + mb_strlen("\e[".$this->background_color."m"."\e[".$this->foreground_color."m")) * $replaced : 0;
 		$replaced = 0;
 		
 		$this->message = str_replace("\t", "     ", $this->message, $replaced); //tab with 5 spaces
@@ -289,7 +289,7 @@ class Colorizer {
 	 */ 
 	protected function lineParse($line){
 		//This line has an implicit \n at the end otherwise, I am free to add it
-		$count = ((strlen($line) - $this->adjustmentCount) < 1) ? 0 : (strlen($line) - $this->adjustmentCount);
+		$count = ((mb_strlen($line) - $this->adjustmentCount) < 1) ? 0 : (mb_strlen($line) - $this->adjustmentCount);
 		if($count == 0){
 			return false;
 		}
@@ -316,13 +316,13 @@ class Colorizer {
 			$v_padding = ""; //to complete the virtual line
 			$words = explode(" ", $line);
 			foreach($words as $word){
-				$_count = strlen($word);
+				$_count = mb_strlen($word);
 				if(($v_count + $_count) < $this->wlimit){
 					$v_line .= $word. " ";
 					$v_count += ($_count + 1);
 				}
 				else {
-					$finishing_count = strlen($v_line);
+					$finishing_count = mb_strlen($v_line);
 					$finishing_diff = $this->wlimit - $finishing_count;
 					$i = 0;
 					while($i<$finishing_diff){
